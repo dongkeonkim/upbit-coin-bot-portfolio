@@ -21,19 +21,23 @@ jobs:
       trade-service: ${{ steps.filter.outputs.trade-service }}
       trading-engine: ${{ steps.filter.outputs.trading-engine }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v3
+      - uses: actions/checkout@v7
+      - uses: dorny/paths-filter@v4
         id: filter
         with:
           filters: |
             asset-service:
               - 'services/asset-service/**'
+              - '.github/workflows/ci.yml'
             market-data-service:
               - 'services/market-data-service/**'
+              - '.github/workflows/ci.yml'
             trade-service:
               - 'services/trade-service/**'
+              - '.github/workflows/ci.yml'
             trading-engine:
               - 'services/trading-engine/**'
+              - '.github/workflows/ci.yml'
 
   # Node.js 서비스 테스트 (asset-service)
   test-asset-service:
@@ -44,10 +48,10 @@ jobs:
       run:
         working-directory: services/asset-service
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -74,10 +78,10 @@ jobs:
       run:
         working-directory: services/market-data-service
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -104,10 +108,10 @@ jobs:
       run:
         working-directory: services/trade-service
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
@@ -134,10 +138,10 @@ jobs:
       run:
         working-directory: services/trading-engine
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
