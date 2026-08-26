@@ -1,0 +1,42 @@
+{
+  "strategy_name": "MFI Deep Dive Strategy",
+  "description": "1,680개 전략 전수 조사 결과 1위. RSI 대신 MFI(자금 흐름)를 사용하여 거래량 실린 투매를 포착하며, 1% 이상의 깊은 눌림목을 공략해 거래 빈도와 승률을 동시에 잡은 완성형 전략.",
+  "performance": {
+    "total_trades": 762,
+    "P1_win_rate": 0.621,
+    "P2_win_rate": 0.611,
+    "P3_win_rate": 0.517,
+    "avg_monthly_trades": 56,
+    "note": "익절 +0.7% / 손절 -0.6% 기준. 기존 RSI 전략 대비 거래 기회 1.6배 증가."
+  },
+  "trading_rules": {
+    "timeframe": {
+      "trend": "60m",
+      "entry": "1m"
+    },
+    "entry_conditions": {
+      "condition_1": {
+        "type": "trend_filter",
+        "logic": "SMA_20 > SMA_60 > SMA_120",
+        "description": "1시간봉 정배열 (상승 추세)"
+      },
+      "condition_2": {
+        "type": "trigger",
+        "indicator": "MFI",
+        "period": 14,
+        "logic": "MFI < 15",
+        "description": "MFI(14) 15 미만 (자금 이탈 과매도)"
+      },
+      "condition_3": {
+        "type": "dip_filter",
+        "logic": "(Close - SMA_20) / SMA_20 < -0.01",
+        "description": "20일 이평선 대비 -1.0% 이상 깊은 하락 (Deep Dip)"
+      }
+    },
+    "exit_conditions": {
+      "take_profit": 0.007,
+      "stop_loss": -0.006
+    }
+  },
+  "target_coins": ["KRW-BTC", "KRW-ETH", "KRW-XRP"]
+}

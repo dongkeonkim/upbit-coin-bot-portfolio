@@ -1,0 +1,27 @@
+# Trading Engine Dependencies
+
+# HTTP Client
+httpx>=0.25.0
+
+# Redis
+redis>=5.0.0
+
+# PostgreSQL (for backtest data)
+psycopg2-binary>=2.9.0
+
+# Structured Logging (production-grade JSON logging)
+structlog>=24.1.0
+
+# WebSocket (실시간 체결 데이터)
+websockets>=12.0
+
+# Kubernetes (Leader Election for HA)
+kubernetes>=28.1.0
+
+# Data Analysis
+numpy>=1.24.0
+pandas>=2.0.0
+xgboost>=2.0.0
+
+# MultiStrategy 전용 (pandas_ta는 Python 3.12+ 필요)
+# pandas_ta>=0.3.14b

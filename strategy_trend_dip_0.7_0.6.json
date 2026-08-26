@@ -1,0 +1,42 @@
+{
+  "strategy_name": "Trend Follow Dip Sniper (Extended)",
+  "description": "손절폭을 -0.6%로 확대하여 생존율을 높이고, 익절폭을 +0.7%로 늘려 수익성을 극대화한 버전. 상승장 눌림목 공략의 정석.",
+  "performance": {
+    "total_trades": 479,
+    "P1_win_rate": 0.656,
+    "P2_win_rate": 0.619,
+    "P3_win_rate": 0.536,
+    "avg_monthly_trades": 35,
+    "note": "익절 +0.7% / 손절 -0.6% 기준. 모든 구간에서 목표 승률 초과 달성."
+  },
+  "trading_rules": {
+    "timeframe": {
+      "trend": "60m",
+      "entry": "1m"
+    },
+    "entry_conditions": {
+      "condition_1": {
+        "type": "trend_filter",
+        "logic": "SMA_20 > SMA_60 > SMA_120",
+        "description": "1시간봉 정배열 (확실한 상승 추세)"
+      },
+      "condition_2": {
+        "type": "trigger",
+        "indicator": "RSI",
+        "period": 14,
+        "logic": "RSI < 30",
+        "description": "RSI(14) 30 미만 (건전한 조정)"
+      },
+      "condition_3": {
+        "type": "dip_filter",
+        "logic": "(Close - SMA_20) / SMA_20 < -0.005",
+        "description": "20일 이평선 대비 -0.5% 이상 눌림목 형성 (전략 로직은 -0.5% 유지)"
+      }
+    },
+    "exit_conditions": {
+      "take_profit": 0.007,
+      "stop_loss": -0.006
+    }
+  },
+  "target_coins": ["KRW-BTC", "KRW-ETH", "KRW-XRP"]
+}

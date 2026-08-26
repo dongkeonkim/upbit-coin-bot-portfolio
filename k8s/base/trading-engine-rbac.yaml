@@ -1,0 +1,34 @@
+# ServiceAccount for trading-engine
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: trading-engine
+  namespace: coinbot
+  labels:
+    app: trading-engine
+---
+# Role - Lease 리소스 CRUD 권한 (Leader Election용)
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: trading-engine-leader-election
+  namespace: coinbot
+rules:
+  - apiGroups: ["coordination.k8s.io"]
+    resources: ["leases"]
+    verbs: ["get", "create", "update"]
+---
+# RoleBinding - ServiceAccount와 Role 연결
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: trading-engine-leader-election
+  namespace: coinbot
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: trading-engine-leader-election
+subjects:
+  - kind: ServiceAccount
+    name: trading-engine
+    namespace: coinbot

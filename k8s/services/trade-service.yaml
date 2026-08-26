@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trade-service
+  namespace: coinbot
+  labels:
+    app: trade-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trade-service
+  template:
+    metadata:
+      labels:
+        app: trade-service
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: trade-service
+          image: localhost:5000/trade-service:fix-v1
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: coinbot-config
+            - secretRef:
+                name: coinbot-secrets
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trade-service
+  namespace: coinbot
+spec:
+  selector:
+    app: trade-service
+  ports:
+    - port: 3000
+      targetPort: 3000

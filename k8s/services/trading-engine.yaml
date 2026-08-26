@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trading-engine
+  namespace: coinbot
+  labels:
+    app: trading-engine
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trading-engine
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: trading-engine
+    spec:
+      serviceAccountName: trading-engine
+      terminationGracePeriodSeconds: 30
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: trading-engine
+          image: localhost:5000/trading-engine:latest
+          imagePullPolicy: Always
+          command: ["python", "-m", "src.main", "realtime-ha", "--strategy", "ml"]
+          env:
+            - name: LEASE_NAME
+              value: "trading-engine-lock"
+            - name: ML_MODEL_DIR
+              value: "/app/models"
+          envFrom:
+            - configMapRef:
+                name: coinbot-config
+            - secretRef:
+                name: coinbot-secrets
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "200m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+      restartPolicy: Always

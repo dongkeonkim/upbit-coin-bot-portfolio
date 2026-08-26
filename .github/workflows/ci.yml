@@ -1,0 +1,176 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main, develop]
+
+env:
+  NODE_VERSION: '20'
+  PYTHON_VERSION: '3.11'
+  GO_VERSION: '1.21'
+
+jobs:
+  # 변경된 서비스 감지
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      asset-service: ${{ steps.filter.outputs.asset-service }}
+      market-data-service: ${{ steps.filter.outputs.market-data-service }}
+      trade-service: ${{ steps.filter.outputs.trade-service }}
+      trading-engine: ${{ steps.filter.outputs.trading-engine }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            asset-service:
+              - 'services/asset-service/**'
+            market-data-service:
+              - 'services/market-data-service/**'
+            trade-service:
+              - 'services/trade-service/**'
+            trading-engine:
+              - 'services/trading-engine/**'
+
+  # Node.js 서비스 테스트 (asset-service)
+  test-asset-service:
+    needs: changes
+    if: ${{ needs.changes.outputs.asset-service == 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: services/asset-service
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: services/asset-service/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+  # Node.js 서비스 테스트 (market-data-service)
+  test-market-data-service:
+    needs: changes
+    if: ${{ needs.changes.outputs.market-data-service == 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: services/market-data-service
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: services/market-data-service/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+  # Node.js 서비스 테스트 (trade-service)
+  test-trade-service:
+    needs: changes
+    if: ${{ needs.changes.outputs.trade-service == 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: services/trade-service
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: services/trade-service/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+  # Python 서비스 테스트 (trading-engine)
+  test-trading-engine:
+    needs: changes
+    if: ${{ needs.changes.outputs.trading-engine == 'true' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: services/trading-engine
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Lint with ruff
+        run: |
+          pip install ruff
+          ruff check src/ --select E9,F63,F7,F82
+
+      - name: Test
+        run: pytest tests/test_go_compatibility.py -v --cov=src --cov-report=xml
+
+  # CI 완료 확인
+  ci-complete:
+    needs:
+      - changes
+      - test-asset-service
+      - test-market-data-service
+      - test-trade-service
+      - test-trading-engine
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check CI status
+        run: |
+          results='${{ toJson(needs) }}'
+          echo "$results"
+          if echo "$results" | grep -q '"result": "failure"'; then
+            echo "At least one required CI job failed"
+            exit 1
+          fi

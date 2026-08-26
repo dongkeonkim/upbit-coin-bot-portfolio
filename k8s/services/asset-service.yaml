@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asset-service
+  namespace: coinbot
+  labels:
+    app: asset-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asset-service
+  template:
+    metadata:
+      labels:
+        app: asset-service
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: asset-service
+          image: ghcr.io/dongkeonkim/coinbot-asset-service:latest
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: coinbot-config
+            - secretRef:
+                name: coinbot-secrets
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: asset-service
+  namespace: coinbot
+spec:
+  selector:
+    app: asset-service
+  ports:
+    - port: 3000
+      targetPort: 3000

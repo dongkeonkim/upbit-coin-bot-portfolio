@@ -1,0 +1,43 @@
+{
+  "strategy_name": "5m BB Reversal + Deep Dip",
+  "description": "6,720개 전략 전수 조사 1위. 5분봉 볼린저 밴드 하단 이탈과 1분봉 급락(-1%)을 동시에 포착하여 거래 기회를 월 115회로 극대화하면서도 승률 60%를 유지하는 하이브리드 전략.",
+  "performance": {
+    "total_trades": 1555,
+    "P1_win_rate": 0.611,
+    "P2_win_rate": 0.613,
+    "P3_win_rate": 0.494,
+    "avg_monthly_trades": 115,
+    "note": "익절 +0.7% / 손절 -0.6% 기준. 기존 전략 대비 거래량 2배 증가."
+  },
+  "trading_rules": {
+    "timeframe": {
+      "trend": "60m",
+      "main": "5m",
+      "entry": "1m"
+    },
+    "entry_conditions": {
+      "condition_1": {
+        "type": "trend_filter",
+        "logic": "SMA_20 > SMA_60 > SMA_120 (on 60m)",
+        "description": "1시간봉 정배열 (상승 추세)"
+      },
+      "condition_2": {
+        "type": "trigger",
+        "indicator": "BB_LOWER",
+        "timeframe": "5m",
+        "logic": "Close < BB_LOWER",
+        "description": "5분봉 종가가 볼린저 밴드 하단 이탈"
+      },
+      "condition_3": {
+        "type": "dip_filter",
+        "logic": "(Close - SMA_20) / SMA_20 < -0.01",
+        "description": "1분봉 기준 20일 이평선 대비 -1.0% 이상 급락"
+      }
+    },
+    "exit_conditions": {
+      "take_profit": 0.007,
+      "stop_loss": -0.006
+    }
+  },
+  "target_coins": ["KRW-BTC", "KRW-ETH", "KRW-XRP"]
+}

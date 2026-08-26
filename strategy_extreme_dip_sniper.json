@@ -1,0 +1,47 @@
+{
+  "strategy_name": "Extreme Dip Sniper",
+  "description": "상승 추세에서 발생하는 -1% 이상의 급격한 투매(RSI2<5, Vol>3x)를 저격하여 반등을 취하는 초정밀 전략",
+  "performance": {
+    "P1_win_rate": 0.900,
+    "P2_win_rate": 0.625,
+    "P3_win_rate": 0.522,
+    "total_trade_count": 57,
+    "note": "P1, P2 구간 승률 60% 이상 달성 / P3 구간 40% 이상 방어 성공"
+  },
+  "trading_rules": {
+    "timeframe": {
+      "trend": "60m (approximated by 1m SMA stacking)",
+      "entry": "1m"
+    },
+    "entry_conditions": {
+      "condition_1": {
+        "type": "trend_filter",
+        "logic": "SMA_20 > SMA_60 > SMA_120",
+        "description": "1시간봉 정배열 (강한 상승 추세)"
+      },
+      "condition_2": {
+        "type": "trigger",
+        "indicator": "RSI",
+        "period": 2,
+        "logic": "RSI < 5",
+        "description": "RSI(2)가 5 미만인 극심한 과매도"
+      },
+      "condition_3": {
+        "type": "confirmation",
+        "indicator": "Volume",
+        "logic": "Volume > SMA(Volume, 20) * 3.0",
+        "description": "거래량이 평소의 3배 이상 폭발"
+      },
+      "condition_4": {
+        "type": "dip_filter",
+        "logic": "(Close - SMA_20) / SMA_20 < -0.01",
+        "description": "20일 이평선 대비 -1% 이상 급락한 상태 (이격도)"
+      }
+    },
+    "exit_conditions": {
+      "take_profit": 0.005,
+      "stop_loss": -0.004
+    }
+  },
+  "target_coins": ["KRW-BTC", "KRW-ETH", "KRW-XRP"]
+}

@@ -1,0 +1,102 @@
+services:
+  # Redis (메시지 브로커 및 캐시)
+  redis:
+    image: redis:7-alpine
+    container_name: coinbot-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Asset Service (포트폴리오 동기화 - 모의투자 또는 실제 자산 조회)
+  asset-service:
+    build:
+      context: ./services/asset-service
+      dockerfile: Dockerfile
+    container_name: coinbot-asset-service
+    environment:
+      - NODE_ENV=production
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - UPBIT_ACCESS_KEY=${UPBIT_ACCESS_KEY:-}
+      - UPBIT_SECRET_KEY=${UPBIT_SECRET_KEY:-}
+      - USER_ID=${USER_ID:-default_user}
+      - SYNC_INTERVAL_MINUTES=5
+      - REAL_MODE=${REAL_MODE:-false}
+      - INITIAL_BALANCE=${INITIAL_BALANCE:-10000000}
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Market Data Service (마켓 데이터 조회)
+  market-data-service:
+    build:
+      context: ./services/market-data-service
+      dockerfile: Dockerfile
+    container_name: coinbot-market-data
+    environment:
+      - NODE_ENV=production
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Trade Service (주문 실행)
+  trade-service:
+    build:
+      context: ./services/trade-service
+      dockerfile: Dockerfile
+    container_name: coinbot-trade-service
+    environment:
+      - NODE_ENV=production
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - UPBIT_ACCESS_KEY=${UPBIT_ACCESS_KEY}
+      - UPBIT_SECRET_KEY=${UPBIT_SECRET_KEY}
+      - REAL_MODE=${REAL_MODE:-false}
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Trading Engine (전략 분석 및 매매 신호 생성)
+  trading-engine:
+    build:
+      context: ./services/trading-engine
+      dockerfile: Dockerfile
+    container_name: coinbot-trading-engine
+    environment:
+      - PYTHONUNBUFFERED=1
+      - ENVIRONMENT=production
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - USER_ID=${USER_ID:-default_user}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-}
+    depends_on:
+      redis:
+        condition: service_healthy
+      asset-service:
+        condition: service_started
+      market-data-service:
+        condition: service_started
+    # 모의투자 모드: Redis 포트폴리오 연동, WebSocket 실시간 익절/손절 (bid1 기준)
+    command: ["python", "-m", "src.main", "realtime", "--live"]
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+
+networks:
+  default:
+    name: coinbot-network

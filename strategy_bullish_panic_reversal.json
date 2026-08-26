@@ -1,0 +1,44 @@
+{
+  "strategy_name": "Bullish Panic Reversal",
+  "description": "1시간봉 상승 추세에서 발생하는 1분봉 단위의 패닉 셀(과매도+거래량 폭발)을 역매매로 공략하여 짧은 반등을 취하는 전략",
+  "target_performance": {
+    "min_win_rate": 0.50,
+    "achieved_win_rate": 0.5041
+  },
+  "trading_rules": {
+    "timeframe": {
+      "trend": "60m",
+      "entry": "1m"
+    },
+    "entry_conditions": {
+      "condition_1": {
+        "type": "trend_filter",
+        "indicator": "SMA",
+        "timeframe": "60m",
+        "logic": "SMA_20 > SMA_60",
+        "description": "1시간봉 정배열(상승 추세) 유지"
+      },
+      "condition_2": {
+        "type": "trigger",
+        "indicator": "RSI",
+        "timeframe": "1m",
+        "period": 14,
+        "logic": "RSI < 20",
+        "description": "1분봉 RSI 과매도 구간 진입"
+      },
+      "condition_3": {
+        "type": "confirmation",
+        "indicator": "Volume",
+        "timeframe": "1m",
+        "logic": "Volume > SMA(Volume, 20) * 3.0",
+        "description": "1분봉 거래량이 20분 평균 대비 3배(300%) 이상 폭발"
+      }
+    },
+    "exit_conditions": {
+      "take_profit": 0.005,
+      "stop_loss": -0.004
+    }
+  },
+  "target_coins": ["KRW-BTC", "KRW-ETH", "KRW-XRP"],
+  "notes": "손절폭(-0.4%)이 매우 짧으므로 슬리피지 관리가 중요함. 지정가 매수보다는 조건 만족 시 시장가 진입 권장."
+}

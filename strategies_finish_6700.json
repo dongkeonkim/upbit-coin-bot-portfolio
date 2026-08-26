@@ -1,0 +1,470 @@
+[
+  {
+    "name": "RSI_5<5 V0 D-0.005 TTrue CFalse",
+    "logic": {
+      "trigger_col": "RSI_5",
+      "trigger_val": 5,
+      "vol": 0,
+      "dip": -0.005,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 715,
+    "periods": {
+      "P1": {
+        "wr": 0.6504,
+        "t": 123
+      },
+      "P2": {
+        "wr": 0.5043,
+        "t": 462
+      },
+      "P3": {
+        "wr": 0.6077,
+        "t": 130
+      }
+    }
+  },
+  {
+    "name": "RSI_5<5 V0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "RSI_5",
+      "trigger_val": 5,
+      "vol": 0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 206,
+    "periods": {
+      "P1": {
+        "wr": 0.6829,
+        "t": 41
+      },
+      "P2": {
+        "wr": 0.5943,
+        "t": 106
+      },
+      "P3": {
+        "wr": 0.6102,
+        "t": 59
+      }
+    }
+  },
+  {
+    "name": "RSI_9<10 V0 D-0.005 TTrue CFalse",
+    "logic": {
+      "trigger_col": "RSI_9",
+      "trigger_val": 10,
+      "vol": 0,
+      "dip": -0.005,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 483,
+    "periods": {
+      "P1": {
+        "wr": 0.6883,
+        "t": 77
+      },
+      "P2": {
+        "wr": 0.528,
+        "t": 322
+      },
+      "P3": {
+        "wr": 0.6429,
+        "t": 84
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 V0 D-0.005 TFalse CFalse",
+    "logic": {
+      "trigger_col": "RSI_14",
+      "trigger_val": 10,
+      "vol": 0,
+      "dip": -0.005,
+      "trend": false,
+      "candle": false
+    },
+    "total_trades": 209,
+    "periods": {
+      "P1": {
+        "wr": 0.7,
+        "t": 20
+      },
+      "P2": {
+        "wr": 0.5,
+        "t": 154
+      },
+      "P3": {
+        "wr": 0.6286,
+        "t": 35
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 V2.0 D0 TFalse CFalse",
+    "logic": {
+      "trigger_col": "RSI_14",
+      "trigger_val": 10,
+      "vol": 2.0,
+      "dip": 0,
+      "trend": false,
+      "candle": false
+    },
+    "total_trades": 228,
+    "periods": {
+      "P1": {
+        "wr": 0.6,
+        "t": 25
+      },
+      "P2": {
+        "wr": 0.4877,
+        "t": 162
+      },
+      "P3": {
+        "wr": 0.6098,
+        "t": 41
+      }
+    }
+  },
+  {
+    "name": "RSI_14<15 V0 D-0.005 TTrue CFalse",
+    "logic": {
+      "trigger_col": "RSI_14",
+      "trigger_val": 15,
+      "vol": 0,
+      "dip": -0.005,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 442,
+    "periods": {
+      "P1": {
+        "wr": 0.6818,
+        "t": 66
+      },
+      "P2": {
+        "wr": 0.5451,
+        "t": 288
+      },
+      "P3": {
+        "wr": 0.6136,
+        "t": 88
+      }
+    }
+  },
+  {
+    "name": "RSI_14<20 V0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "RSI_14",
+      "trigger_val": 20,
+      "vol": 0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 479,
+    "periods": {
+      "P1": {
+        "wr": 0.6556,
+        "t": 90
+      },
+      "P2": {
+        "wr": 0.6186,
+        "t": 236
+      },
+      "P3": {
+        "wr": 0.5359,
+        "t": 153
+      }
+    }
+  },
+  {
+    "name": "RSI_14<20 V1.5 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "RSI_14",
+      "trigger_val": 20,
+      "vol": 1.5,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 399,
+    "periods": {
+      "P1": {
+        "wr": 0.625,
+        "t": 80
+      },
+      "P2": {
+        "wr": 0.6029,
+        "t": 204
+      },
+      "P3": {
+        "wr": 0.5391,
+        "t": 115
+      }
+    }
+  },
+  {
+    "name": "RSI_14<20 V2.0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "RSI_14",
+      "trigger_val": 20,
+      "vol": 2.0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 319,
+    "periods": {
+      "P1": {
+        "wr": 0.6351,
+        "t": 74
+      },
+      "P2": {
+        "wr": 0.6039,
+        "t": 154
+      },
+      "P3": {
+        "wr": 0.5165,
+        "t": 91
+      }
+    }
+  },
+  {
+    "name": "RSI_14<20 V3.0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "RSI_14",
+      "trigger_val": 20,
+      "vol": 3.0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 207,
+    "periods": {
+      "P1": {
+        "wr": 0.6364,
+        "t": 44
+      },
+      "P2": {
+        "wr": 0.6019,
+        "t": 103
+      },
+      "P3": {
+        "wr": 0.4833,
+        "t": 60
+      }
+    }
+  },
+  {
+    "name": "MFI_14<10 V0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "MFI_14",
+      "trigger_val": 10,
+      "vol": 0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 407,
+    "periods": {
+      "P1": {
+        "wr": 0.7015,
+        "t": 67
+      },
+      "P2": {
+        "wr": 0.6497,
+        "t": 197
+      },
+      "P3": {
+        "wr": 0.5734,
+        "t": 143
+      }
+    }
+  },
+  {
+    "name": "MFI_14<10 V1.5 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "MFI_14",
+      "trigger_val": 10,
+      "vol": 1.5,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 322,
+    "periods": {
+      "P1": {
+        "wr": 0.6538,
+        "t": 52
+      },
+      "P2": {
+        "wr": 0.6424,
+        "t": 165
+      },
+      "P3": {
+        "wr": 0.5619,
+        "t": 105
+      }
+    }
+  },
+  {
+    "name": "MFI_14<10 V2.0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "MFI_14",
+      "trigger_val": 10,
+      "vol": 2.0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 262,
+    "periods": {
+      "P1": {
+        "wr": 0.6531,
+        "t": 49
+      },
+      "P2": {
+        "wr": 0.6231,
+        "t": 130
+      },
+      "P3": {
+        "wr": 0.5663,
+        "t": 83
+      }
+    }
+  },
+  {
+    "name": "MFI_14<15 V0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "MFI_14",
+      "trigger_val": 15,
+      "vol": 0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 762,
+    "periods": {
+      "P1": {
+        "wr": 0.6207,
+        "t": 145
+      },
+      "P2": {
+        "wr": 0.6108,
+        "t": 352
+      },
+      "P3": {
+        "wr": 0.517,
+        "t": 265
+      }
+    }
+  },
+  {
+    "name": "MFI_14<15 V1.5 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "MFI_14",
+      "trigger_val": 15,
+      "vol": 1.5,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 561,
+    "periods": {
+      "P1": {
+        "wr": 0.6,
+        "t": 110
+      },
+      "P2": {
+        "wr": 0.6194,
+        "t": 268
+      },
+      "P3": {
+        "wr": 0.541,
+        "t": 183
+      }
+    }
+  },
+  {
+    "name": "MFI_14<15 V2.0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "MFI_14",
+      "trigger_val": 15,
+      "vol": 2.0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 433,
+    "periods": {
+      "P1": {
+        "wr": 0.6105,
+        "t": 95
+      },
+      "P2": {
+        "wr": 0.6119,
+        "t": 201
+      },
+      "P3": {
+        "wr": 0.5547,
+        "t": 137
+      }
+    }
+  },
+  {
+    "name": "5m_BB_LOWER<price_cmp V0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "5m_BB_LOWER",
+      "trigger_val": "price_cmp",
+      "vol": 0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 1555,
+    "periods": {
+      "P1": {
+        "wr": 0.6113,
+        "t": 391
+      },
+      "P2": {
+        "wr": 0.613,
+        "t": 615
+      },
+      "P3": {
+        "wr": 0.4936,
+        "t": 549
+      }
+    }
+  },
+  {
+    "name": "60m_STOCH_K<20 V0 D-0.01 TTrue CFalse",
+    "logic": {
+      "trigger_col": "60m_STOCH_K",
+      "trigger_val": 20,
+      "vol": 0,
+      "dip": -0.01,
+      "trend": true,
+      "candle": false
+    },
+    "total_trades": 391,
+    "periods": {
+      "P1": {
+        "wr": 0.6364,
+        "t": 11
+      },
+      "P2": {
+        "wr": 0.6383,
+        "t": 141
+      },
+      "P3": {
+        "wr": 0.4519,
+        "t": 239
+      }
+    }
+  }
+]

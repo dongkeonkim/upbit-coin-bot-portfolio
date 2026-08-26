@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: coinbot-config
+  namespace: coinbot
+data:
+  # Node.js services (trade-service, market-data-service, asset-service)
+  NODE_ENV: "production"
+  # Python services (trading-engine)
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "info"
+  # Common
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  USER_ID: "default_user"
+  # REAL_MODE is managed via secrets (coinbot-secrets)
+  INITIAL_BALANCE: "10000000"
+  SYNC_INTERVAL_MINUTES: "5"
+  PYTHONUNBUFFERED: "1"
+  # ML 모델이 있는 15개 코인만 거래
+  ALLOWED_MARKETS: "KRW-BTC,KRW-ETH,KRW-XRP,KRW-SOL,KRW-ADA,KRW-SUI,KRW-LINK,KRW-ETC,KRW-XLM,KRW-SEI,KRW-QTUM,KRW-ARK,KRW-ARDR,KRW-AQT,KRW-WAVES"
+  # ALLOWED_MARKETS 중 거래량 상위 5개만 수집
+  TOP_MARKETS_COUNT: "5"

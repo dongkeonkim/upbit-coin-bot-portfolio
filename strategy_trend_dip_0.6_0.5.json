@@ -1,0 +1,40 @@
+{
+  "strategy_name": "Trend Follow Dip Sniper (Standard)",
+  "description": "익절 +0.6% / 손절 -0.5% 기준. 1시간 상승 추세와 RSI 과매도, 단기 급락(Dip)을 조합한 균형 잡힌 전략.",
+  "performance": {
+    "total_trades": 476,
+    "P1_win_rate": 0.648,
+    "P2_win_rate": 0.623,
+    "P3_win_rate": 0.526,
+    "avg_monthly_trades": 35,
+    "note": "2개 구간 승률 60% 이상, 나머지 구간 50% 이상 달성"
+  },
+  "trading_rules": {
+    "timeframe": {
+      "trend": "60m",
+      "entry": "1m"
+    },
+    "entry_conditions": {
+      "condition_1": {
+        "type": "trend_filter",
+        "logic": "SMA_20 > SMA_60 > SMA_120",
+        "description": "1시간봉 정배열"
+      },
+      "condition_2": {
+        "type": "trigger",
+        "logic": "RSI(14) < 30",
+        "description": "RSI 과매도"
+      },
+      "condition_3": {
+        "type": "dip_filter",
+        "logic": "(Close - SMA_20) / SMA_20 < -0.005",
+        "description": "20일 이평선 대비 -0.5% 이상 눌림"
+      }
+    },
+    "exit_conditions": {
+      "take_profit": 0.006,
+      "stop_loss": -0.005
+    }
+  },
+  "target_coins": ["KRW-BTC", "KRW-ETH", "KRW-XRP"]
+}

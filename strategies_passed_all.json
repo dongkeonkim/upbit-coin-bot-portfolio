@@ -1,0 +1,920 @@
+[
+  {
+    "name": "MFI_14<15 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "MFI",
+      "trigger_col": "MFI_14",
+      "trigger_val": 15,
+      "min_volume_ratio": 0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 762,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6207,
+        "trades": 145
+      },
+      "P2": {
+        "win_rate": 0.6108,
+        "trades": 352
+      },
+      "P3": {
+        "win_rate": 0.517,
+        "trades": 265
+      }
+    }
+  },
+  {
+    "name": "RSI_5<5 + Dip<-0.005 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_5",
+      "trigger_val": 5,
+      "min_volume_ratio": 0,
+      "max_dip": -0.005,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 715,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6504,
+        "trades": 123
+      },
+      "P2": {
+        "win_rate": 0.5043,
+        "trades": 462
+      },
+      "P3": {
+        "win_rate": 0.6077,
+        "trades": 130
+      }
+    }
+  },
+  {
+    "name": "MFI_14<15 + Vol>1.5 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "MFI",
+      "trigger_col": "MFI_14",
+      "trigger_val": 15,
+      "min_volume_ratio": 1.5,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 561,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6,
+        "trades": 110
+      },
+      "P2": {
+        "win_rate": 0.6194,
+        "trades": 268
+      },
+      "P3": {
+        "win_rate": 0.541,
+        "trades": 183
+      }
+    }
+  },
+  {
+    "name": "RSI_9<10 + Dip<-0.005 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_9",
+      "trigger_val": 10,
+      "min_volume_ratio": 0,
+      "max_dip": -0.005,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 483,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6883,
+        "trades": 77
+      },
+      "P2": {
+        "win_rate": 0.528,
+        "trades": 322
+      },
+      "P3": {
+        "win_rate": 0.6429,
+        "trades": 84
+      }
+    }
+  },
+  {
+    "name": "RSI_14<20 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 20,
+      "min_volume_ratio": 0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 479,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6556,
+        "trades": 90
+      },
+      "P2": {
+        "win_rate": 0.6186,
+        "trades": 236
+      },
+      "P3": {
+        "win_rate": 0.5359,
+        "trades": 153
+      }
+    }
+  },
+  {
+    "name": "RSI_14<15 + Dip<-0.005 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 15,
+      "min_volume_ratio": 0,
+      "max_dip": -0.005,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 442,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6818,
+        "trades": 66
+      },
+      "P2": {
+        "win_rate": 0.5451,
+        "trades": 288
+      },
+      "P3": {
+        "win_rate": 0.6136,
+        "trades": 88
+      }
+    }
+  },
+  {
+    "name": "MFI_14<15 + Vol>2.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "MFI",
+      "trigger_col": "MFI_14",
+      "trigger_val": 15,
+      "min_volume_ratio": 2.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 433,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6105,
+        "trades": 95
+      },
+      "P2": {
+        "win_rate": 0.6119,
+        "trades": 201
+      },
+      "P3": {
+        "win_rate": 0.5547,
+        "trades": 137
+      }
+    }
+  },
+  {
+    "name": "MFI_14<10 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "MFI",
+      "trigger_col": "MFI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 407,
+    "periods": {
+      "P1": {
+        "win_rate": 0.7015,
+        "trades": 67
+      },
+      "P2": {
+        "win_rate": 0.6497,
+        "trades": 197
+      },
+      "P3": {
+        "win_rate": 0.5734,
+        "trades": 143
+      }
+    }
+  },
+  {
+    "name": "RSI_14<20 + Vol>1.5 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 20,
+      "min_volume_ratio": 1.5,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 399,
+    "periods": {
+      "P1": {
+        "win_rate": 0.625,
+        "trades": 80
+      },
+      "P2": {
+        "win_rate": 0.6029,
+        "trades": 204
+      },
+      "P3": {
+        "win_rate": 0.5391,
+        "trades": 115
+      }
+    }
+  },
+  {
+    "name": "MFI_14<10 + Vol>1.5 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "MFI",
+      "trigger_col": "MFI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 1.5,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 322,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6538,
+        "trades": 52
+      },
+      "P2": {
+        "win_rate": 0.6424,
+        "trades": 165
+      },
+      "P3": {
+        "win_rate": 0.5619,
+        "trades": 105
+      }
+    }
+  },
+  {
+    "name": "RSI_14<20 + Vol>2.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 20,
+      "min_volume_ratio": 2.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 319,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6351,
+        "trades": 74
+      },
+      "P2": {
+        "win_rate": 0.6039,
+        "trades": 154
+      },
+      "P3": {
+        "win_rate": 0.5165,
+        "trades": 91
+      }
+    }
+  },
+  {
+    "name": "MFI_14<10 + Vol>2.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "MFI",
+      "trigger_col": "MFI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 2.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 262,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6531,
+        "trades": 49
+      },
+      "P2": {
+        "win_rate": 0.6231,
+        "trades": 130
+      },
+      "P3": {
+        "win_rate": 0.5663,
+        "trades": 83
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 + Vol>2.0",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 2.0,
+      "max_dip": 0,
+      "trend_filter": false,
+      "green_candle": false
+    },
+    "total_trades": 228,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6,
+        "trades": 25
+      },
+      "P2": {
+        "win_rate": 0.4877,
+        "trades": 162
+      },
+      "P3": {
+        "win_rate": 0.6098,
+        "trades": 41
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 + Dip<-0.005",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 0,
+      "max_dip": -0.005,
+      "trend_filter": false,
+      "green_candle": false
+    },
+    "total_trades": 209,
+    "periods": {
+      "P1": {
+        "win_rate": 0.7,
+        "trades": 20
+      },
+      "P2": {
+        "win_rate": 0.5,
+        "trades": 154
+      },
+      "P3": {
+        "win_rate": 0.6286,
+        "trades": 35
+      }
+    }
+  },
+  {
+    "name": "RSI_14<20 + Vol>3.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 20,
+      "min_volume_ratio": 3.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 207,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6364,
+        "trades": 44
+      },
+      "P2": {
+        "win_rate": 0.6019,
+        "trades": 103
+      },
+      "P3": {
+        "win_rate": 0.4833,
+        "trades": 60
+      }
+    }
+  },
+  {
+    "name": "RSI_5<5 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_5",
+      "trigger_val": 5,
+      "min_volume_ratio": 0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 206,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6829,
+        "trades": 41
+      },
+      "P2": {
+        "win_rate": 0.5943,
+        "trades": 106
+      },
+      "P3": {
+        "win_rate": 0.6102,
+        "trades": 59
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 + Vol>1.5 + Dip<-0.005",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 1.5,
+      "max_dip": -0.005,
+      "trend_filter": false,
+      "green_candle": false
+    },
+    "total_trades": 197,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6471,
+        "trades": 17
+      },
+      "P2": {
+        "win_rate": 0.4966,
+        "trades": 145
+      },
+      "P3": {
+        "win_rate": 0.6286,
+        "trades": 35
+      }
+    }
+  },
+  {
+    "name": "RSI_5<5 + Vol>1.5 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_5",
+      "trigger_val": 5,
+      "min_volume_ratio": 1.5,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 186,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6667,
+        "trades": 33
+      },
+      "P2": {
+        "win_rate": 0.604,
+        "trades": 101
+      },
+      "P3": {
+        "win_rate": 0.5962,
+        "trades": 52
+      }
+    }
+  },
+  {
+    "name": "RSI_9<10 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_9",
+      "trigger_val": 10,
+      "min_volume_ratio": 0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 184,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6923,
+        "trades": 39
+      },
+      "P2": {
+        "win_rate": 0.6804,
+        "trades": 97
+      },
+      "P3": {
+        "win_rate": 0.625,
+        "trades": 48
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 + Vol>2.0 + Dip<-0.005",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 2.0,
+      "max_dip": -0.005,
+      "trend_filter": false,
+      "green_candle": false
+    },
+    "total_trades": 184,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6471,
+        "trades": 17
+      },
+      "P2": {
+        "win_rate": 0.4925,
+        "trades": 134
+      },
+      "P3": {
+        "win_rate": 0.6364,
+        "trades": 33
+      }
+    }
+  },
+  {
+    "name": "RSI_14<15 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 15,
+      "min_volume_ratio": 0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 180,
+    "periods": {
+      "P1": {
+        "win_rate": 0.7073,
+        "trades": 41
+      },
+      "P2": {
+        "win_rate": 0.7444,
+        "trades": 90
+      },
+      "P3": {
+        "win_rate": 0.5918,
+        "trades": 49
+      }
+    }
+  },
+  {
+    "name": "MFI_14<10 + Vol>3.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "MFI",
+      "trigger_col": "MFI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 3.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 170,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6129,
+        "trades": 31
+      },
+      "P2": {
+        "win_rate": 0.6279,
+        "trades": 86
+      },
+      "P3": {
+        "win_rate": 0.5849,
+        "trades": 53
+      }
+    }
+  },
+  {
+    "name": "RSI_9<10 + Vol>1.5 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_9",
+      "trigger_val": 10,
+      "min_volume_ratio": 1.5,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 165,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6562,
+        "trades": 32
+      },
+      "P2": {
+        "win_rate": 0.6703,
+        "trades": 91
+      },
+      "P3": {
+        "win_rate": 0.619,
+        "trades": 42
+      }
+    }
+  },
+  {
+    "name": "RSI_5<5 + Vol>2.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_5",
+      "trigger_val": 5,
+      "min_volume_ratio": 2.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 159,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6774,
+        "trades": 31
+      },
+      "P2": {
+        "win_rate": 0.6235,
+        "trades": 85
+      },
+      "P3": {
+        "win_rate": 0.5581,
+        "trades": 43
+      }
+    }
+  },
+  {
+    "name": "RSI_14<15 + Vol>1.5 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 15,
+      "min_volume_ratio": 1.5,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 157,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6571,
+        "trades": 35
+      },
+      "P2": {
+        "win_rate": 0.7407,
+        "trades": 81
+      },
+      "P3": {
+        "win_rate": 0.6098,
+        "trades": 41
+      }
+    }
+  },
+  {
+    "name": "RSI_9<10 + Vol>2.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_9",
+      "trigger_val": 10,
+      "min_volume_ratio": 2.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 145,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6667,
+        "trades": 30
+      },
+      "P2": {
+        "win_rate": 0.6582,
+        "trades": 79
+      },
+      "P3": {
+        "win_rate": 0.5833,
+        "trades": 36
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 + Vol>3.0 + Dip<-0.005",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 3.0,
+      "max_dip": -0.005,
+      "trend_filter": false,
+      "green_candle": false
+    },
+    "total_trades": 141,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6364,
+        "trades": 11
+      },
+      "P2": {
+        "win_rate": 0.4902,
+        "trades": 102
+      },
+      "P3": {
+        "win_rate": 0.6071,
+        "trades": 28
+      }
+    }
+  },
+  {
+    "name": "RSI_14<15 + Vol>2.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 15,
+      "min_volume_ratio": 2.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 135,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6667,
+        "trades": 33
+      },
+      "P2": {
+        "win_rate": 0.7101,
+        "trades": 69
+      },
+      "P3": {
+        "win_rate": 0.5758,
+        "trades": 33
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 + Vol>2.0 + Dip<-0.01",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 2.0,
+      "max_dip": -0.01,
+      "trend_filter": false,
+      "green_candle": false
+    },
+    "total_trades": 133,
+    "periods": {
+      "P1": {
+        "win_rate": 0.7692,
+        "trades": 13
+      },
+      "P2": {
+        "win_rate": 0.4891,
+        "trades": 92
+      },
+      "P3": {
+        "win_rate": 0.6071,
+        "trades": 28
+      }
+    }
+  },
+  {
+    "name": "MFI_14<15 + Dip<-0.01 + Trend + Green",
+    "logic": {
+      "trigger_type": "MFI",
+      "trigger_col": "MFI_14",
+      "trigger_val": 15,
+      "min_volume_ratio": 0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": true
+    },
+    "total_trades": 127,
+    "periods": {
+      "P1": {
+        "win_rate": 0.7,
+        "trades": 20
+      },
+      "P2": {
+        "win_rate": 0.68,
+        "trades": 50
+      },
+      "P3": {
+        "win_rate": 0.4035,
+        "trades": 57
+      }
+    }
+  },
+  {
+    "name": "RSI_5<5 + Vol>3.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_5",
+      "trigger_val": 5,
+      "min_volume_ratio": 3.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 119,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6316,
+        "trades": 19
+      },
+      "P2": {
+        "win_rate": 0.6667,
+        "trades": 63
+      },
+      "P3": {
+        "win_rate": 0.5405,
+        "trades": 37
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 10,
+      "min_volume_ratio": 0,
+      "max_dip": 0,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 111,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6842,
+        "trades": 19
+      },
+      "P2": {
+        "win_rate": 0.5062,
+        "trades": 81
+      },
+      "P3": {
+        "win_rate": 0.8182,
+        "trades": 11
+      }
+    }
+  },
+  {
+    "name": "RSI_9<10 + Vol>3.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_9",
+      "trigger_val": 10,
+      "min_volume_ratio": 3.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 106,
+    "periods": {
+      "P1": {
+        "win_rate": 0.65,
+        "trades": 20
+      },
+      "P2": {
+        "win_rate": 0.7018,
+        "trades": 57
+      },
+      "P3": {
+        "win_rate": 0.5862,
+        "trades": 29
+      }
+    }
+  },
+  {
+    "name": "RSI_14<15 + Vol>3.0 + Dip<-0.01 + Trend",
+    "logic": {
+      "trigger_type": "RSI",
+      "trigger_col": "RSI_14",
+      "trigger_val": 15,
+      "min_volume_ratio": 3.0,
+      "max_dip": -0.01,
+      "trend_filter": true,
+      "green_candle": false
+    },
+    "total_trades": 100,
+    "periods": {
+      "P1": {
+        "win_rate": 0.6818,
+        "trades": 22
+      },
+      "P2": {
+        "win_rate": 0.717,
+        "trades": 53
+      },
+      "P3": {
+        "win_rate": 0.6,
+        "trades": 25
+      }
+    }
+  }
+]

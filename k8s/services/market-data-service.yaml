@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: market-data-service
+  namespace: coinbot
+  labels:
+    app: market-data-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: market-data-service
+  template:
+    metadata:
+      labels:
+        app: market-data-service
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: market-data-service
+          image: ghcr.io/dongkeonkim/coinbot-market-data-service:latest
+          imagePullPolicy: IfNotPresent
+          envFrom:
+            - configMapRef:
+                name: coinbot-config
+            - secretRef:
+                name: coinbot-secrets
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: market-data-service
+  namespace: coinbot
+spec:
+  selector:
+    app: market-data-service
+  ports:
+    - port: 3000
+      targetPort: 3000

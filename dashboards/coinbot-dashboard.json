@@ -1,0 +1,146 @@
+{
+  "id": null,
+  "uid": "coinbot-trading",
+  "title": "Coinbot Trading Monitor",
+  "tags": ["coinbot", "trading"],
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "refresh": "1m",
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Trading Analysis (Stage & Signals)",
+      "type": "logs",
+      "gridPos": { "x": 0, "y": 0, "w": 24, "h": 8 },
+      "datasource": { "type": "loki", "uid": "ff6ciy5zvk7wgf" },
+      "targets": [
+        {
+          "expr": "{namespace=\"coinbot\", pod=~\"trading-engine.*\"} | json | event =~ \"stage_analysis|signal|buy|sell|trade|sell_triggered\" | line_format \"[{{.event}}] S1={{.stage1_passed}}({{.stage1_coins_count}}/{{.stage1_required}}) Alt={{.stage1_alt_passed}}({{.stage1_alt_coins_count}}/{{.stage1_alt_required}}) | {{.top_coins}} | S2all:{{.stage2_all_candidates}} | S2pass:{{.stage2_candidates}} | S3pass:{{.stage3_candidates}}{{if .market}} {{.market}}{{end}}{{if .signal_type}} -> {{.signal_type}}{{end}}{{if .reason}} ({{.reason}}){{end}}\"",
+          "refId": "A",
+          "maxLines": 100
+        }
+      ],
+      "options": {
+        "showTime": true,
+        "showLabels": false,
+        "showCommonLabels": false,
+        "wrapLogMessage": true,
+        "prettifyLogMessage": false,
+        "enableLogDetails": true,
+        "sortOrder": "Descending"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Portfolio Updates",
+      "type": "logs",
+      "gridPos": { "x": 0, "y": 8, "w": 12, "h": 6 },
+      "datasource": { "type": "loki", "uid": "ff6ciy5zvk7wgf" },
+      "targets": [
+        {
+          "expr": "{namespace=\"coinbot\", pod=~\"trading-engine.*\"} | json | event = \"portfolio_update\" | line_format \"W{{.portfolio_value}} | Positions: {{.position_count}} | Return: {{.return_pct}}%\"",
+          "refId": "A",
+          "maxLines": 100
+        }
+      ],
+      "options": {
+        "showTime": true,
+        "sortOrder": "Descending"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Errors & Warnings",
+      "type": "logs",
+      "gridPos": { "x": 12, "y": 8, "w": 12, "h": 6 },
+      "datasource": { "type": "loki", "uid": "ff6ciy5zvk7wgf" },
+      "targets": [
+        {
+          "expr": "{namespace=\"coinbot\"} | json | level =~ \"error|warn\" | line_format \"[{{.level}}] {{.service}}: {{.event}} - {{.reason}}{{.msg}}\"",
+          "refId": "A",
+          "maxLines": 100
+        }
+      ],
+      "options": {
+        "showTime": true,
+        "sortOrder": "Descending"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Market Data Service",
+      "type": "logs",
+      "gridPos": { "x": 0, "y": 14, "w": 12, "h": 6 },
+      "datasource": { "type": "loki", "uid": "ff6ciy5zvk7wgf" },
+      "targets": [
+        {
+          "expr": "{namespace=\"coinbot\", pod=~\"market-data.*\"} | json | event =~ \"candles_published|markets_selected\" | line_format \"[{{.event}}] {{if .candleCount}}Candles: {{.candleCount}}{{end}} {{if .topMarketsCount}}Markets: {{.topMarketsCount}}{{end}}\"",
+          "refId": "A",
+          "maxLines": 100
+        }
+      ],
+      "options": {
+        "showTime": true,
+        "sortOrder": "Descending"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Trade Service",
+      "type": "logs",
+      "gridPos": { "x": 12, "y": 14, "w": 12, "h": 6 },
+      "datasource": { "type": "loki", "uid": "ff6ciy5zvk7wgf" },
+      "targets": [
+        {
+          "expr": "{namespace=\"coinbot\", pod=~\"trade-service.*\"} | json | line_format \"[{{.event}}] {{.msg}}\"",
+          "refId": "A",
+          "maxLines": 100
+        }
+      ],
+      "options": {
+        "showTime": true,
+        "sortOrder": "Descending"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Asset Service",
+      "type": "logs",
+      "gridPos": { "x": 0, "y": 20, "w": 12, "h": 6 },
+      "datasource": { "type": "loki", "uid": "ff6ciy5zvk7wgf" },
+      "targets": [
+        {
+          "expr": "{namespace=\"coinbot\", pod=~\"asset-service.*\"} | json | line_format \"[{{.event}}] {{.msg}} {{if .krw_balance}}KRW: W{{.krw_balance}}{{end}}\"",
+          "refId": "A",
+          "maxLines": 100
+        }
+      ],
+      "options": {
+        "showTime": true,
+        "sortOrder": "Descending"
+      }
+    },
+    {
+      "id": 7,
+      "title": "All Services Status",
+      "type": "logs",
+      "gridPos": { "x": 12, "y": 20, "w": 12, "h": 6 },
+      "datasource": { "type": "loki", "uid": "ff6ciy5zvk7wgf" },
+      "targets": [
+        {
+          "expr": "{namespace=\"coinbot\"} | json | event =~ \".*started|.*connected|.*initialized\" | line_format \"[{{.service}}] {{.event}}\"",
+          "refId": "A",
+          "maxLines": 100
+        }
+      ],
+      "options": {
+        "showTime": true,
+        "sortOrder": "Descending"
+      }
+    }
+  ]
+}

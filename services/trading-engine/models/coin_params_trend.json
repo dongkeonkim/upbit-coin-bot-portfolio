@@ -1,0 +1,93 @@
+{
+  "KRW-BTC": {
+    "hold_minutes": 30,
+    "threshold": 0.4,
+    "profit": 119.2,
+    "win_rate": 80.0,
+    "trades": 45
+  },
+  "KRW-ETH": {
+    "hold_minutes": 30,
+    "threshold": 0.42,
+    "profit": 105.5,
+    "win_rate": 71.2,
+    "trades": 66
+  },
+  "KRW-XRP": {
+    "hold_minutes": 30,
+    "threshold": 0.44,
+    "profit": 150.1,
+    "win_rate": 71.7,
+    "trades": 99
+  },
+  "KRW-SOL": {
+    "hold_minutes": 30,
+    "threshold": 0.5,
+    "profit": 48.6,
+    "win_rate": 80.0,
+    "trades": 25
+  },
+  "KRW-ADA": {
+    "hold_minutes": 30,
+    "threshold": 0.42,
+    "profit": 146.9,
+    "win_rate": 71.2,
+    "trades": 111
+  },
+  "KRW-XLM": {
+    "hold_minutes": 30,
+    "threshold": 0.46,
+    "profit": 90.9,
+    "win_rate": 78.0,
+    "trades": 59
+  },
+  "KRW-QTUM": {
+    "hold_minutes": 30,
+    "threshold": 0.46,
+    "profit": 102.8,
+    "win_rate": 76.2,
+    "trades": 63
+  },
+  "KRW-LINK": {
+    "hold_minutes": 30,
+    "threshold": 0.44,
+    "profit": 125.8,
+    "win_rate": 81.5,
+    "trades": 65
+  },
+  "KRW-AQT": {
+    "hold_minutes": 30,
+    "threshold": 0.48,
+    "profit": 158.7,
+    "win_rate": 78.7,
+    "trades": 61
+  },
+  "KRW-ARDR": {
+    "hold_minutes": 30,
+    "threshold": 0.54,
+    "profit": 35.7,
+    "win_rate": 72.0,
+    "trades": 25
+  },
+  "KRW-ETC": {
+    "hold_minutes": 30,
+    "threshold": 0.46,
+    "profit": 111.5,
+    "win_rate": 75.0,
+    "trades": 72
+  },
+  "KRW-ARK": {
+    "hold_minutes": 30,
+    "threshold": 0.4,
+    "profit": 152.9,
+    "win_rate": 72.9,
+    "trades": 96
+  },
+  "KRW-WAVES": {
+    "hold_minutes": 30,
+    "threshold": 0.48,
+    "profit": 70.6,
+    "win_rate": 72.0,
+    "trades": 50
+  }
+}

@@ -1,0 +1,2 @@
+# Top 25 Features (Upbit)
+FEATURES = ['bb_width', 'pullback_depth', 'dist_high_20', 'volatility_atr', 'squeeze', 'price_position', 'williams_r', 'cci14', 'candle_body_ratio', 'range_ratio', 'dist_ma5', 'stoch_k', 'dist_low_20', 'macd', 'returns', 'higher_high', 'lower_wick_ratio', 'macd_hist', 'dist_ma120', 'macd_signal', 'higher_low', 'vol_surge', 'buying_pressure', 'dist_ma15', 'obv_slope']

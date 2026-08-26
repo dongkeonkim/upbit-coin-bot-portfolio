@@ -1,0 +1,47 @@
+{
+  "strategy_name": "Balanced Dip Buyer",
+  "description": "손절폭을 -0.5%로 완화하여 거래 기회를 월 15회 이상 확보하면서도, 상승장 눌림목(Dip)을 공략해 승률 우위를 점하는 전략",
+  "performance": {
+    "P1_win_rate": 0.575,
+    "P2_win_rate": 0.444,
+    "P3_win_rate": 0.600,
+    "total_trade_count": 229,
+    "note": "익절 +0.6% / 손절 -0.5% 기준. 최근장(P3) 승률 60% 달성."
+  },
+  "trading_rules": {
+    "timeframe": {
+      "trend": "60m (approximated)",
+      "entry": "1m"
+    },
+    "entry_conditions": {
+      "condition_1": {
+        "type": "trend_filter",
+        "logic": "SMA_20 > SMA_60 > SMA_120",
+        "description": "1시간봉 정배열 (상승 추세)"
+      },
+      "condition_2": {
+        "type": "trigger",
+        "indicator": "RSI",
+        "period": 14,
+        "logic": "RSI < 25",
+        "description": "RSI(14) 25 미만 (적절한 과매도)"
+      },
+      "condition_3": {
+        "type": "confirmation",
+        "indicator": "Volume",
+        "logic": "Volume > SMA(Volume, 20) * 1.5",
+        "description": "거래량이 평소의 1.5배 이상 증가 (가벼운 투매)"
+      },
+      "condition_4": {
+        "type": "dip_filter",
+        "logic": "(Close - SMA_20) / SMA_20 < -0.005",
+        "description": "20일 이평선 대비 -0.5% 이상 눌림"
+      }
+    },
+    "exit_conditions": {
+      "take_profit": 0.006,
+      "stop_loss": -0.005
+    }
+  },
+  "target_coins": ["KRW-BTC", "KRW-ETH", "KRW-XRP"]
+}

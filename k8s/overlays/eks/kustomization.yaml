@@ -1,0 +1,26 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../
+
+images:
+  - name: ghcr.io/dongkeonkim/coinbot-asset-service
+    newName: 000000000000.dkr.ecr.ap-northeast-2.amazonaws.com/coinbot/asset-service
+    newTag: latest
+  - name: ghcr.io/dongkeonkim/coinbot-market-data-service
+    newName: 000000000000.dkr.ecr.ap-northeast-2.amazonaws.com/coinbot/market-data-service
+    newTag: latest
+  - name: ghcr.io/dongkeonkim/coinbot-trade-service
+    newName: 000000000000.dkr.ecr.ap-northeast-2.amazonaws.com/coinbot/trade-service
+    newTag: latest
+  - name: ghcr.io/dongkeonkim/coinbot-trading-engine
+    newName: 000000000000.dkr.ecr.ap-northeast-2.amazonaws.com/coinbot/trading-engine
+    newTag: latest
+
+patches:
+  - patch: |-
+      - op: remove
+        path: /spec/template/spec/imagePullSecrets
+    target:
+      kind: Deployment

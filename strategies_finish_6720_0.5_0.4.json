@@ -1,0 +1,182 @@
+[
+  {
+    "name": "RSI_5<5 V0 D-0.01 TTrue CFalse",
+    "total_trades": 204,
+    "periods": {
+      "P1": {
+        "wr": 0.7,
+        "t": 40
+      },
+      "P2": {
+        "wr": 0.6321,
+        "t": 106
+      },
+      "P3": {
+        "wr": 0.569,
+        "t": 58
+      }
+    }
+  },
+  {
+    "name": "RSI_9<10 V0 D-0.005 TTrue CFalse",
+    "total_trades": 481,
+    "periods": {
+      "P1": {
+        "wr": 0.7467,
+        "t": 75
+      },
+      "P2": {
+        "wr": 0.5093,
+        "t": 322
+      },
+      "P3": {
+        "wr": 0.6071,
+        "t": 84
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 V0 D-0.005 TFalse CFalse",
+    "total_trades": 205,
+    "periods": {
+      "P1": {
+        "wr": 0.8,
+        "t": 20
+      },
+      "P2": {
+        "wr": 0.4902,
+        "t": 153
+      },
+      "P3": {
+        "wr": 0.625,
+        "t": 32
+      }
+    }
+  },
+  {
+    "name": "RSI_14<10 V2.0 D0 TFalse CFalse",
+    "total_trades": 224,
+    "periods": {
+      "P1": {
+        "wr": 0.76,
+        "t": 25
+      },
+      "P2": {
+        "wr": 0.5093,
+        "t": 161
+      },
+      "P3": {
+        "wr": 0.6053,
+        "t": 38
+      }
+    }
+  },
+  {
+    "name": "RSI_14<20 V0 D-0.01 TTrue CFalse",
+    "total_trades": 470,
+    "periods": {
+      "P1": {
+        "wr": 0.7024,
+        "t": 84
+      },
+      "P2": {
+        "wr": 0.6059,
+        "t": 236
+      },
+      "P3": {
+        "wr": 0.5133,
+        "t": 150
+      }
+    }
+  },
+  {
+    "name": "MFI_14<10 V0 D-0.01 TTrue CFalse",
+    "total_trades": 401,
+    "periods": {
+      "P1": {
+        "wr": 0.7077,
+        "t": 65
+      },
+      "P2": {
+        "wr": 0.6244,
+        "t": 197
+      },
+      "P3": {
+        "wr": 0.5683,
+        "t": 139
+      }
+    }
+  },
+  {
+    "name": "MFI_14<10 V2.0 D-0.01 TTrue CFalse",
+    "total_trades": 256,
+    "periods": {
+      "P1": {
+        "wr": 0.7021,
+        "t": 47
+      },
+      "P2": {
+        "wr": 0.6,
+        "t": 130
+      },
+      "P3": {
+        "wr": 0.5949,
+        "t": 79
+      }
+    }
+  },
+  {
+    "name": "5m_BB_LOWER<price_cmp V3.0 D-0.01 TTrue CFalse",
+    "total_trades": 411,
+    "periods": {
+      "P1": {
+        "wr": 0.62,
+        "t": 100
+      },
+      "P2": {
+        "wr": 0.6171,
+        "t": 175
+      },
+      "P3": {
+        "wr": 0.5,
+        "t": 136
+      }
+    }
+  },
+  {
+    "name": "60m_STOCH_K<20 V0 D-0.01 TTrue CFalse",
+    "total_trades": 386,
+    "periods": {
+      "P1": {
+        "wr": 0.7,
+        "t": 10
+      },
+      "P2": {
+        "wr": 0.6667,
+        "t": 141
+      },
+      "P3": {
+        "wr": 0.4809,
+        "t": 235
+      }
+    }
+  },
+  {
+    "name": "60m_STOCH_K<20 V1.5 D-0.01 TTrue CFalse",
+    "total_trades": 234,
+    "periods": {
+      "P1": {
+        "wr": 0.6667,
+        "t": 3
+      },
+      "P2": {
+        "wr": 0.6337,
+        "t": 101
+      },
+      "P3": {
+        "wr": 0.4231,
+        "t": 130
+      }
+    }
+  }
+]
